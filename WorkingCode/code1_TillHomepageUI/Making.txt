@@ -1,0 +1,11 @@
+npx create-react-app youtube_clone
+
+after editing src folder
+npm install react-bootstrap bootstrap node-sass react-icons
+
+create components folder 
+
+style header
+style sidebar
+style CategoriesBar
+style video

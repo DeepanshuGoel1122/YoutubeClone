@@ -1,0 +1,118 @@
+npx create-react-app youtube_clone
+
+after editing src folder
+npm install react-bootstrap bootstrap node-sass react-icons
+
+create components folder 
+
+style header
+style sidebar
+style CategoriesBar
+style video
+
+---------------------------------------------------------------
+
+now make login page
+
+now its time for routing
+npm install react-router-dom
+
+make routes
+
+now setup the firebase > goto console > add project > continue
+
+npm i firebase 
+create new file firebase.js , add configuration to it.
+
+now come to Redux part
+Redux (
+    it it it will have a single store, and all the data which is shared among all the components will be stored in tht store.
+    we can refer a store as a global state.
+    we can read data from the data easily, but if we want to modify data in the global state, you have to use dispatch function.
+
+    we want to add data in the global state, and the data is come from public API,
+    in react component we need go create an action creator, { actionCreator returns a function and action returns an object, and function will create an action}
+
+    in action creator we have middleware function, it will call the API, will get the data and prepare the data and then it will create the action object.
+
+    Action have 2 values, type and payload.
+    action will hit the reducer, Reducer is a function, it will take the previous state and current action.based on that action type it will return a new state.and the store will be updated with the new state.
+    and then from that store, components can read the data. 
+
+    useSelector() hook is used to get the data from the store 
+    useDispatch() hook is used to get the dispatch function.
+)
+
+npm install redux react-redux redux-thunk redux-devtools-extension
+
+create redux folder
+create file store.js
+
+connect store in index.js
+now you should see our initial states in chrome redux extension
+create folder actions and reducers in redux folder.
+create file actionType.js
+
+now for authentication, goto firebase > authentication > enable google
+
+crate file firebase.js
+
+now we need to create a action creator
+
+import that login action in LoginScreen
+
+now we will able to fetch info of user on click of signin
+
+create file auth.reducer.js
+
+
+after some code in store.js, auth.reducer.js, auth.action.js now we are able to se states LOGIN_REQUEST, LOGIN_SUCCESS, LOAD_PROFILE.
+
+now in LoginScreen, we use useSelector hook, and useEffect to se if user accessToken is not null, then redirect user to homepage
+
+now if after login we have accessToken, then we will redirect to homepage '/'
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+now the problem is if we search for any route like //search or any thing it will work,
+but we have to protect route, without login we don't want anyone to use the app.
+(if user is not authenticated , we will no give them route)
+
+
+in Main.js some code, now only authenticated user can go to route
+
+now the problem is when we refresh the page our redux state is going back to initial state, we will have to store that.
+
+we parse the access token and user in the BrowserStorage.
+we will use sessionStorage > in auth.action.js
+replace Initial state of accesstoken from null to session storage get item
+
+now if we refresh the page, it will be logged in 
+
+
+now we will implement Logout functionality
+work in auth.action.ja and auth.reduce.js 
+on click in sidebar.js logout button
+
+Authentication Part is Now Completed
+
+
+----------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+{
+For react-router-dom v6, simply replace Redirect with Navigate
+In react-router-dom v6 useHistory() is replaced by useNavigate().
+import firebase from 'firebase/app'; replaced with import 'firebase/compat/auth';
+clone1-yt
+project-23640985264
+}

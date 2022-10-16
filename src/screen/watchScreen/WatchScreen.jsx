@@ -15,7 +15,7 @@ import HelmetCustom from '../../components/HelmetCustom';
 
 import { getRelatedVideos, getVideoById } from '../../redux/actions/videos.action';
 
-import './_watchscreen.scss';
+import './_watchScreen.scss';
 
 
 

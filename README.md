@@ -1,3 +1,11 @@
+# Introduction
+In this YouTube clone app we have tried to make our app as real YouTube. User can sign-in to the app using Google account authentication and app will fetch user’s YouTube account’s data like subscriptions and liked videos etc. and show them. 
+This is real time application, if user comment on any video it will also show in YouTube app.
+We have implemented many exciting features like react skeleton on loading, lazy-load effect to save bandwidth, pagination for infinite scroll and also suggested video section.
+We have used YouTube v3 Data API to fetch videos and user data.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
